@@ -13,9 +13,12 @@ let value = process.argv[3];
 
 switch (action) {
     case 'concert-this':
-        
+        concertThis(value);
         break;
 
-    default:
+    case 'spotify-this-song':
+        spotifyThisSong(value);
         break;
 }
+
+// funtions called
