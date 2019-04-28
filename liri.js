@@ -12,13 +12,21 @@ let action = process.argv[2];
 let value = process.argv[3];
 
 switch (action) {
-    case 'concert-this':
-        concertThis(value);
-        break;
+    // case 'concert-this':
+    //     concertThis(value);
+    //     break;
 
     case 'spotify-this-song':
         spotifyThisSong(value);
         break;
 }
 
-// funtions called
+// functions called
+function spotifyThisSong(value) {
+    spotify.search({ type: 'track', query: 'All the Small Things' }, function (err, data) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
+        }
+        console.log(data);
+    });
+}
