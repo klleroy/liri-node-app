@@ -1,5 +1,9 @@
-require('dontenv').config();
+require('dotenv').config();
 
-let keys = require('./keys.js');
+import { spotify as _spotify } from './keys.js';
+_spotify = new Spotify(_spotify);
 
-let keys = new Spotify(keys.spotify);
+import moment from 'moment';
+moment().format();
+
+axios.get
