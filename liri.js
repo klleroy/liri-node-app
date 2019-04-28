@@ -1,9 +1,10 @@
 require('dotenv').config();
 
 import { spotify as _spotify } from './keys.js';
-_spotify = new Spotify(_spotify);
-
+import Spotify from 'node-spotify-api';
+spotify = new Spotify(_spotify);
 import moment from 'moment';
-moment().format();
+import fs from 'fs';
+import request from 'request';
 
-axios.get
+import axios from 'axios';
