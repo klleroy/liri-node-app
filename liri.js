@@ -20,24 +20,12 @@ switch (action) {
         break;
 }
 
+// functions called
 function spotifyThisSong(value) {
     spotify.search({ type: 'track', query: 'All the Small Things' }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-
         console.log(data);
     });
-}
-
-// functions called
-function spotifyThisSong(value) {
-    spotify
-        .search({ type: 'track', query: 'All the Small Things' })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
 }
