@@ -49,11 +49,13 @@ function movieThis(value) {
         "http://omdbapi.com/?t=" + value + "&apikey=trilogy")
         .then(
             function (response) {
-            console.log(
-                '~~~~~~~~~~~~~~~~~\n' + "Title: " + response.data.Title
-            );
-        }
-    )
+                console.log(
+                    '\n~~~~~~~~~~~~~~~~~\n' + "\nTitle: " + response.data.Title + "\nYear: " + response.data.Year +
+                    "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes: " + response.data.Ratings[1].Value +
+                    "\nCountry Produced In: " + response.data.Country + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors
+                );
+            }
+        )
 }
 
 // function to spotify song. Takes value variable from switch case up top.
@@ -66,9 +68,10 @@ function spotifyThisSong(value) {
             return console.log('Error occurred: ' + err);
         }
         else if (data) {
-            console.log('~~~~~~~~~~~~~~~~~\n');
-            console.log('Artist: ' + data.tracks.items[0].album.artists[0].name + '\nSong: ' + data.tracks.items[0].name + '\nURL: ' +
-                data.tracks.items[0].external_urls.spotify + '\nAlbum: ' + data.tracks.items[0].album.name);
+            console.log('\n~~~~~~~~~~~~~~~~~\n');
+            console.log('Artist: ' + data.tracks.items[0].album.artists[0].name + '\nSong: ' + data.tracks.items[0].name + 
+                '\nURL: ' + data.tracks.items[0].external_urls.spotify + '\nAlbum: ' + data.tracks.items[0].album.name
+            );
         }
     });
 };
