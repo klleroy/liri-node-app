@@ -8,9 +8,10 @@ const keys = require('./keys.js');
 const Spotify = require('node-spotify-api');
 const spotify = new Spotify(keys.spotify);
 const axios = require('axios');
-const fs = require('fs');
 const moment = require('moment');
-const request = require('request');
+const fs = require('fs');
+// not necessary
+// const request = require('request');
 
 let action = process.argv[2];
 let value = process.argv[3];
@@ -36,8 +37,29 @@ switch (action) {
 function concertThis(value) {
     axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp")
     .then(
-        function name(params) {
-            
+        function (response) {
+            for (let i = 0; i < response.data.length; i++) {
+                let venueName = response.data[i].venue.name;
+                console.log("\nVenue Name: " + venueName);
+                let country = response.data[i].venue.country;
+                console.log("Country: " + country);
+                let city = response.data[i].venue.city;
+                console.log("City: " + city);
+                let date = moment(response.data[i].datetime).format('MM/DD/YYYY');
+                console.log("Date: " + date);             
+            }
+        },
+        function (error) {
+            if (error.response) {
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+            } else if (error.request) {
+                console.log(error.request);
+            } else {
+                console.log("Error",error.message);
+            }
+            console.log(error.config);            
         }
     )
 }
