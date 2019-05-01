@@ -38,28 +38,29 @@ function concertThis(value) {
     axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp")
     .then(
         function (response) {
+            // loop through JSON Array to get concert info.
             for (let i = 0; i < response.data.length; i++) {
-                let venueName = response.data[i].venue.name;
-                console.log("\nVenue Name: " + venueName);
+                let venue = response.data[i].venue.name;
+                logToFile("\nVenue Name: " + venue);
                 let country = response.data[i].venue.country;
-                console.log("Country: " + country);
+                logToFile("Country: " + country);
                 let city = response.data[i].venue.city;
-                console.log("City: " + city);
+                logToFile("City: " + city);
                 let date = moment(response.data[i].datetime).format('MM/DD/YYYY');
-                console.log("Date: " + date);             
+                logToFile("Date: " + date);             
             }
         },
         function (error) {
             if (error.response) {
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
+                logToFile(error.response.data);
+                logToFile(error.response.status);
+                logToFile(error.response.headers);
             } else if (error.request) {
-                console.log(error.request);
+                logToFile(error.request);
             } else {
-                console.log("Error",error.message);
+                logToFile("Error",error.message);
             }
-            console.log(error.config);            
+            logToFile(error.config);            
         }
     )
 }
@@ -71,12 +72,11 @@ function spotifyThisSong(value) {
         query: value
     }, function (err, data) {
         if (err) {
-            return console.log('Error occurred: ' + err);
+            return logToFile('Error occurred (Spotify): ' + err);
         }
         else if (data) {
-            console.log('\n~~~~~~~~~~~~~~~~~\n');
-            console.log('Artist: ' + data.tracks.items[0].album.artists[0].name + '\nSong: ' + data.tracks.items[0].name + 
-                '\nURL: ' + data.tracks.items[0].external_urls.spotify + '\nAlbum: ' + data.tracks.items[0].album.name
+            logToFile("\n-------------------\nspotify-this-song\n" + "-------------------\nArtist: " + data.tracks.items[0].album.artists[0].name + "\nSong: " + data.tracks.items[0].name + 
+                "\nURL: " + data.tracks.items[0].external_urls.spotify + "\nAlbum: " + data.tracks.items[0].album.name
             );
         }
     });
@@ -94,21 +94,83 @@ function spotifyThisSong(value) {
     - Actors in the movie.
 */
 
-function movieThis(value) {
-    if (value == null) {
-        value = "Mr. Nobody"
-    }
-    // Then run a request with axios to the OMDB API with the movie specified
-    axios.get(
-        "http://omdbapi.com/?t=" + value + "&apikey=trilogy")
-        .then(
-            function (response) {
-                console.log(
-                    '\n~~~~~~~~~~~~~~~~~\n' + "\nTitle: " + response.data.Title + "\nYear: " + response.data.Year +
-                    "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes: " + response.data.Ratings[1].Value +
-                    "\nCountry Produced In: " + response.data.Country + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors
-                );
-            }
-        )
-};
+// function movieThis(value) {
+//     if (value == null) {
+//         value = "Mr. Nobody"
+//     }
+//     // Then run a request with axios to the OMDB API with the movie specified
+//     axios.get(
+//         "http://omdbapi.com/?t=" + value + "&apikey=trilogy")
+//         .then(
+//             function (response) {
 
+//             }
+//         )
+// };
+
+function movieThis(value) {
+    if (value === null) {
+        value = 'Mr. Nobody'
+    }
+    // originally concatenated these logs but decided to change for readability.
+    axios.get('http://www.omdbapi.com/?apikey=trilogy&t=' + value)
+        .then(function (response) {
+            let title = response.data.Title;
+            logToFile('\nTitle: ' + title);
+            let year = response.data.Year;
+            logToFile('Year: ' + year);
+            let imdbRating = response.data.imdbRating;
+            logToFile('IMDB Rating: ' + imdbRating);
+            let rottenToms = response.data.Ratings[1].Value;
+            logToFile('Rotten Tomatoes Rating: ' + rottenToms);
+            let country = response.data.Country;
+            logToFile('Country Produced In: ' + country);
+            let plot = response.data.Plot;
+            logToFile('Plot: ' + plot);
+            let actors = response.data.Actors;
+            logToFile('Actors: ' + actors);
+        }),
+        function (error) {
+            if (error.response) {
+                logToFile(error.response.data);
+                logToFile(error.response.status);
+                logToFile(error.response.headers);
+            } else if (error.request) {
+                logToFile(error.request);
+            } else {
+                logToFile("Error",error.message);
+            }
+            logToFile(error.config);
+        }
+}
+
+function doWhatItSays() {
+    fs.readFile("random.txt","utf8", function (err, data) {
+        if (err) {
+            return logToFile(err);
+        }
+        data = data.split(",");
+        if (data[0] === 'concert-this') {
+            concertThis(data[1]);
+        } else if (data[0] === 'spotify-this-song') {
+            spotifyThisSong(data[1]);
+        } else if (data[0] === 'movie-this') {
+            movieThis(data[1]);
+        }
+    })
+}
+
+function appendToFile(text) {
+    fs.appendFile("log.txt", `${text}\n`, function (err) {
+
+        // If an error was experienced we will log it.
+        if (err) {
+           return logToFile(err);
+        }
+    });
+}
+
+function logToFile(log) {
+    appendToFile(log);
+    console.log(log);
+}
