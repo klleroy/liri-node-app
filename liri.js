@@ -29,7 +29,8 @@ switch (action) {
         break;
 
     case 'do-what-it-says':
-        doWhatItSays(value);
+        doWhatItSays();
+        break;
 }
 
 /*
