@@ -25,12 +25,11 @@ switch (action) {
         break;
 
     case 'movie-this':
-        movieThis(value); ''
+        movieThis(value);
         break;
 
     case 'do-what-it-says':
         doWhatItSays();
-        break;
 }
 
 /*
