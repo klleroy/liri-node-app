@@ -44,6 +44,9 @@ switch (action) {
 */
 
 function movieThis(value) {
+    if (value == null) {
+        value = "Mr. Nobody"
+    }
     // Then run a request with axios to the OMDB API with the movie specified
     axios.get(
         "http://omdbapi.com/?t=" + value + "&apikey=trilogy")
