@@ -8,8 +8,8 @@ const keys = require('./keys.js');
 const Spotify = require('node-spotify-api');
 const spotify = new Spotify(keys.spotify);
 const axios = require('axios');
-const moment = require('moment');
 const fs = require('fs');
+const moment = require('moment');
 const request = require('request');
 
 let action = process.argv[2];
@@ -32,33 +32,14 @@ switch (action) {
         doWhatItSays();
 }
 
-/*
-  * Title of the movie.
-  * Year the movie came out.
-  * IMDB Rating of the movie.
-  * Rotten Tomatoes Rating of the movie.
-  * Country where the movie was produced.
-  * Language of the movie.
-  * Plot of the movie.
-  * Actors in the movie.
-*/
-
-function movieThis(value) {
-    if (value == null) {
-        value = "Mr. Nobody"
-    }
-    // Then run a request with axios to the OMDB API with the movie specified
-    axios.get(
-        "http://omdbapi.com/?t=" + value + "&apikey=trilogy")
-        .then(
-            function (response) {
-                console.log(
-                    '\n~~~~~~~~~~~~~~~~~\n' + "\nTitle: " + response.data.Title + "\nYear: " + response.data.Year +
-                    "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes: " + response.data.Ratings[1].Value +
-                    "\nCountry Produced In: " + response.data.Country + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors
-                );
-            }
-        )
+// concert search
+function concertThis(value) {
+    axios.get("https://rest.bandsintown.com/artists/" + value + "/events?app_id=codingbootcamp")
+    .then(
+        function name(params) {
+            
+        }
+    )
 }
 
 // function to spotify song. Takes value variable from switch case up top.
@@ -77,5 +58,35 @@ function spotifyThisSong(value) {
             );
         }
     });
+};
+
+// Search OMDB API for movie and returns the following...
+/* 
+    - Title of the movie
+    - Year the movie came out
+    - IMDB Rating of the movie
+    - Rotten Tomatoes Rating of the movie
+    - Country where the movie was produced.
+    - Language of the movie.
+    - Plot of the movie.
+    - Actors in the movie.
+*/
+
+function movieThis(value) {
+    if (value == null) {
+        value = "Mr. Nobody"
+    }
+    // Then run a request with axios to the OMDB API with the movie specified
+    axios.get(
+        "http://omdbapi.com/?t=" + value + "&apikey=trilogy")
+        .then(
+            function (response) {
+                console.log(
+                    '\n~~~~~~~~~~~~~~~~~\n' + "\nTitle: " + response.data.Title + "\nYear: " + response.data.Year +
+                    "\nIMDB Rating: " + response.data.imdbRating + "\nRotten Tomatoes: " + response.data.Ratings[1].Value +
+                    "\nCountry Produced In: " + response.data.Country + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors
+                );
+            }
+        )
 };
 
