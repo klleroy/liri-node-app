@@ -1,0 +1,90 @@
+
+Venue Name: XS Nightclub
+Country: United States
+
+Venue Name: XS Nightclub
+City: Las Vegas
+City: Las Vegas
+Country: United States
+Date: 05/04/2019
+Date: 05/18/2019
+City: Rio De Janeiro
+
+Venue Name: City of Rock
+Date: 09/27/2019
+Country: Brazil
+
+Artist: Stevie Ray Vaughan
+Song: Texas Flood
+Album: Texas Flood (Legacy Edition)
+URL: https://open.spotify.com/track/5MtN38MGEWJt60LwtBmFNP
+
+Title: The Departed
+Year: 2006
+Country Produced In: USA, Hong Kong
+IMDB Rating: 8.5
+Plot: An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.
+Actors: Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mark Wahlberg
+Rotten Tomatoes Rating: 91%
+
+Artist: Backstreet Boys
+Album: The Hits--Chapter One
+Song: I Want It That Way
+URL: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
+
+Title: Mr. Nobody
+Rotten Tomatoes Rating: 67%
+Year: 2009
+Country Produced In: Belgium, Germany, Canada, France, USA, UK
+IMDB Rating: 7.8
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+
+Venue Name: XS Nightclub
+Country: United States
+Date: 05/04/2019
+
+Venue Name: XS Nightclub
+Country: United States
+City: Las Vegas
+City: Las Vegas
+
+Venue Name: City of Rock
+City: Rio De Janeiro
+Country: Brazil
+Date: 05/18/2019
+Date: 09/27/2019
+
+Artist: Stevie Ray Vaughan
+Song: Texas Flood
+URL: https://open.spotify.com/track/5MtN38MGEWJt60LwtBmFNP
+Album: Texas Flood (Legacy Edition)
+
+Title: The Departed
+Year: 2006
+IMDB Rating: 8.5
+Rotten Tomatoes Rating: 91%
+Country Produced In: USA, Hong Kong
+Plot: An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.
+Actors: Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mark Wahlberg
+
+Title: The Departed
+Year: 2006
+IMDB Rating: 8.5
+Rotten Tomatoes Rating: 91%
+Country Produced In: USA, Hong Kong
+Plot: An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.
+Actors: Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mark Wahlberg
+
+Title: Mr. Nobody
+Year: 2009
+Rotten Tomatoes Rating: 67%
+Country Produced In: Belgium, Germany, Canada, France, USA, UK
+IMDB Rating: 7.8
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+
+Artist: Backstreet Boys
+Song: I Want It That Way
+Album: The Hits--Chapter One
+URL: https://open.spotify.com/track/6e40mgJiCid5HRAGrbpGA6
