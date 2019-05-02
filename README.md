@@ -5,19 +5,19 @@ Welcome to the Language Interpretation & Recognition Interface or LIRI for short
 ## Examples
 ### Concert Search
 - Using the [Band Is In Town API](https://app.swaggerhub.com/apis-docs/Bandsintown/PublicAPI/3.0.0)
-![Screenshot](assets/images/concertThis.png)
+![Screenshot](assets/images/concertThis.PNG)
 
 ### Spotify
 - Using the [Spotify API](https://developer.spotify.com/web-api/)
-![Screenshot](assets/images/spotifyThisSong.png)
+![Screenshot](assets/images/spotifyThisSong.PNG)
 
 ### Movie Search
 - Using [OMDB API](https://omdbapi.com)
-![Screenshot](assets/images/movieThis.png)
+![Screenshot](assets/images/movieThis.PNG)
 
 ### Do What It Says
 - Using the [Spotify API](https://developer.spotify.com/web-api/) we do what is stated in ```random.txt```.
-![Screenshot](assets/images/concertThis.png)
+![Screenshot](assets/images/concertThis.PNG)
 
 ### Video Example
 - We are also logging to the console as well as to an external file as shown below.
