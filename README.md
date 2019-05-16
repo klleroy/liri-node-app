@@ -57,9 +57,9 @@ Because this is does not run in the browser, you will need to do some setup on y
 ## Contributing
 
 1. Fork it (https://github.com/jobu206/liri-node-app/fork)
-1. Create your feature branch (git checkout -b feature/liri-node-app)
-1. Commit your changes (git commit -am 'Add some yourMessageHere')
-1. Push to the branch (git push origin feature/liri-node-app)
+1. Create your feature branch `git checkout -b feature/liri-node-app`
+1. Commit your changes `git commit -am 'Add some yourMessageHere'`
+1. Push to the branch `git push origin feature/liri-node-app`
 1. Create a new Pull Request
 
 ## Authors
